@@ -5,22 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Find Your Perfect Home</title>
   <meta name="description" content="Real estate lead capture page for buyers. Get a custom list of homes matched to your needs in your area.">
-
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{
-      --bg: #0f172a;          /* slate-900 */
-      --card: #111827;        /* gray-900 */
-      --muted: #94a3b8;       /* slate-400 */
-      --text: #e5e7eb;        /* gray-200 */
-      --brand: #22c55e;       /* green-500 */
-      --brand-600:#16a34a;    /* green-600 */
-      --danger:#ef4444;       /* red-500 */
-      --accent:#38bdf8;       /* sky-400 */
+      --bg: #0f172a;
+      --card: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --brand: #22c55e;
+      --brand-600:#16a34a;
+      --danger:#ef4444;
+      --accent:#38bdf8;
       --ring: rgba(56,189,248,.4);
     }
     *{box-sizing:border-box}
@@ -33,20 +30,15 @@
     }
     a{color:var(--accent); text-decoration:none}
     .container{width:100%; max-width:1100px; margin:0 auto; padding:24px}
-
-    /* HERO */
     .hero{display:grid; grid-template-columns:1.2fr 1fr; gap:28px; align-items:center; padding:48px 0}
     .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(56,189,248,.15); color:#c3e9fb; font-weight:600; font-size:12px; letter-spacing:.3px}
     .title{font-size:clamp(28px,5vw,44px); line-height:1.1; margin:14px 0}
     .lead{color:var(--muted); font-size:clamp(14px,2.2vw,18px)}
     .points{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
     .point{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); padding:12px 14px; border-radius:12px; font-size:14px}
-
-    /* CARD / FORM */
     .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); box-shadow:0 10px 30px rgba(0,0,0,.35); border-radius:18px; padding:22px}
     .card h3{margin:0 0 6px}
     .small{color:var(--muted); font-size:12px}
-    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
     .field{display:flex; flex-direction:column; gap:6px; margin:10px 0}
     label{font-weight:600; font-size:13px}
     input, select, textarea{
@@ -55,7 +47,6 @@
     }
     input:focus, select:focus, textarea:focus{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
     .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-
     .cta{display:flex; gap:10px; align-items:center}
     .btn{
       appearance:none; border:0; background:linear-gradient(180deg, var(--brand), var(--brand-600));
@@ -63,26 +54,18 @@
     }
     .btn:active{transform:translateY(1px)}
     .btn[disabled]{opacity:.6; cursor:not-allowed; filter:grayscale(.3)}
-
     .consent{display:flex; gap:10px; align-items:flex-start; font-size:12px; color:var(--muted)}
     .consent input{margin-top:2px}
-
     .error{color:var(--danger); font-size:12px; margin-top:6px; display:none}
     .success{display:none; background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.35); color:#dcfce7; padding:10px 12px; border-radius:10px; font-weight:600; margin-top:10px}
-
-    /* TRUST */
     .trust{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px}
     .trust-item{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:14px}
     .stars{letter-spacing:2px}
-
-    /* FOOTER */
     footer{color:var(--muted); font-size:12px; margin:36px 0 12px; text-align:center}
-
-    /* RESPONSIVE */
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr;}
       .points{grid-template-columns:1fr 1fr}
-      .form-row,.row{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
     }
     @media (max-width: 560px){
       .points{grid-template-columns:1fr}
@@ -101,7 +84,6 @@
           <div class="point">✅ Neighborhood insights & school info</div>
           <div class="point">✅ New listing alerts (daily/weekly)</div>
         </div>
-
         <div class="trust">
           <div class="trust-item">
             <div class="stars">★★★★★</div>
@@ -114,12 +96,9 @@
           </div>
         </div>
       </div>
-
-      <!-- FORM CARD -->
       <div class="card" role="region" aria-label="Lead capture form">
         <h3>Tell me about your next home</h3>
         <div class="small">I usually reply within 10 minutes during business hours.</div>
-
         <form id="leadForm" novalidate>
           <div class="field">
             <label for="intent">I’m looking to</label>
@@ -132,7 +111,6 @@
             </select>
             <div class="error" data-error-for="intent">Please choose an option.</div>
           </div>
-
           <div class="row">
             <div class="field">
               <label for="name">Name</label>
@@ -145,70 +123,52 @@
               <div class="error" data-error-for="email">Enter a valid email.</div>
             </div>
           </div>
-
           <div class="row">
             <div class="field">
-              <label for="phone">Phone <span class="small">(optional)</span></label>
-              <input id="phone" name="phone" placeholder="(337) 555-1234" inputmode="tel" pattern="^[0-9\-+()\s]{7,}$">
-              <div class="error" data-error-for="phone">Enter a valid phone or leave blank.</div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="(337) 555-1234" inputmode="tel" pattern="^[0-9\-+()\s]{7,}$" required>
+              <div class="error" data-error-for="phone">Phone number is required.</div>
             </div>
             <div class="field">
               <label for="zip">Preferred ZIP / Area</label>
               <input id="zip" name="zip" placeholder="70501, 70503…">
             </div>
           </div>
-
           <div class="field">
             <label for="details">Details</label>
             <textarea id="details" name="details" rows="3" placeholder="Beds, baths, price range, style, commute time, school zone, special features…"></textarea>
           </div>
-
-          <!-- Honeypot for spam bots -->
           <input type="text" id="company" name="company" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px" aria-hidden="true">
-
-          <!-- UTM / meta capture -->
           <input type="hidden" name="page_url" id="page_url">
           <input type="hidden" name="utm_source" id="utm_source">
           <input type="hidden" name="utm_medium" id="utm_medium">
           <input type="hidden" name="utm_campaign" id="utm_campaign">
           <input type="hidden" name="gclid" id="gclid">
-
           <div class="consent">
             <input type="checkbox" id="consent" required>
             <label for="consent">I agree to be contacted about my request by phone, text, or email. I can opt out anytime. <span class="small">(We never sell your info.)</span></label>
           </div>
           <div class="error" data-error-for="consent">Please agree so I can follow up.</div>
-
           <div class="cta" style="margin-top:8px">
             <button class="btn" id="submitBtn" type="submit">Get My Home List</button>
             <div id="spinner" aria-hidden="true" style="display:none">⏳</div>
           </div>
-
           <div class="success" id="successMsg" role="status">Thanks! I’ve got your request — I’ll send your custom home list shortly.</div>
           <div class="error" id="formError" style="display:none">Something went wrong. Please try again or call/text me.</div>
         </form>
-
         <div class="small" style="margin-top:10px">By submitting, you agree to our <a href="#" id="privacyLink">Privacy Policy</a>.</div>
       </div>
     </header>
-
-    <!-- FAQ / Extra Content (optional) -->
     <section>
       <h3>Why buy with a local agent?</h3>
       <p class="small">You get real-time market intel, access to off‑market opportunities, and strategic guidance on offers, inspections, and negotiations.</p>
     </section>
-
     <footer>
       © <span id="year"></span> Licensed REALTOR®
     </footer>
   </div>
-
   <script>
-    // --- Helpers ---
     const $ = (sel, ctx=document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
-
-    // Prefill hidden meta fields
     (function captureMeta(){
       $('#page_url').value = window.location.href;
       const params = new URLSearchParams(window.location.search);
@@ -218,74 +178,47 @@
       $('#gclid').value = params.get('gclid') || '';
       $('#year').textContent = new Date().getFullYear();
     })();
-
-    // Basic validation
     function showError(name, show=true){
       const el = document.querySelector(`.error[data-error-for="${name}"]`);
       if(el) el.style.display = show ? 'block' : 'none';
     }
-
     function validate(form){
       let ok = true;
       const email = form.email.value.trim();
       const phone = form.phone.value.trim();
       const intent = form.intent.value;
       const consent = $('#consent').checked;
-
       showError('intent', intent === '');
       if(intent === '') ok = false;
-
       showError('name', form.name.value.trim()==='');
       if(form.name.value.trim()==='') ok = false;
-
       const emailOk = /.+@.+\..+/.test(email);
       showError('email', !emailOk);
       if(!emailOk) ok = false;
-
-      const phoneOk = phone === '' || /^[0-9\-+()\s]{7,}$/.test(phone);
+      const phoneOk = /^[0-9\-+()\s]{7,}$/.test(phone);
       showError('phone', !phoneOk);
       if(!phoneOk) ok = false;
-
       showError('consent', !consent);
       if(!consent) ok = false;
-
-      // Honeypot
       if($('#company').value.trim()!==''){ ok=false; }
-
       return ok;
     }
-
-    // Submission (choose ONE integration below)
     const form = $('#leadForm');
     const submitBtn = $('#submitBtn');
     const spinner = $('#spinner');
     const successMsg = $('#successMsg');
     const formError = $('#formError');
-
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
       formError.style.display='none';
       successMsg.style.display='none';
-
       if(!validate(form)) return;
-
       submitBtn.disabled = true; spinner.style.display = 'inline-block';
-
       try {
-        // --- Option A: Send to a custom endpoint (Node/Python/PHP) ---
-        // const resp = await fetch('https://YOUR_ENDPOINT_HERE/leads', {
-        //   method:'POST', headers:{'Content-Type':'application/json'},
-        //   body: JSON.stringify(Object.fromEntries(new FormData(form)))
-        // });
-
-        // --- Option B: Formspree (quick start, no backend) ---
-        // 1) Create a Formspree form and replace the URL below
-        // 2) Add your domain in Formspree settings to avoid CORS issues
         const resp = await fetch('https://formspree.io/f/YOUR_ID_HERE', {
           method:'POST', headers:{'Accept':'application/json'},
           body: new FormData(form)
         });
-
         if(resp.ok){
           successMsg.style.display='block';
           form.reset();
@@ -297,14 +230,6 @@
         formError.style.display='block';
       } finally {
         submitBtn.disabled = false; spinner.style.display='none';
-      }
-    });
-
-    // Optional: simple analytics event
-    document.addEventListener('visibilitychange', ()=>{
-      if(document.visibilityState==='hidden'){
-        // Replace with your analytics call
-        // navigator.sendBeacon('/analytics', JSON.stringify({event:'page_hide'}));
       }
     });
   </script>
